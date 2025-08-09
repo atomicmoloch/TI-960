@@ -1,5 +1,12 @@
+/*ROM dumper for TI SN54S287 / SN54S387 / SN74S287 / SN74S387 4-bit PROMs (datasheet: https://archive.org/details/bitsavers_tidataBookcomputerComponentsDataBook_16851665/page/n172/mode/1up?view=theater)
 
-// Data lines Y0–Y3 to A0–A3
+Connect A0-A3 to PROM data output pins D01-DO4
+D2-D9 to PROM address pins ADA-ADH
+Connect PROM Chip select pins S-bar 1 and 2 to ground
+If the PROM is open-collector (SN54S387 / SN74S387), the outputs must be pulled up. I used 10 kΩ resistors.
+
+*/
+
 const int dataPins[4] = {A0, A1, A2, A3};
 const int addrPins[8] = {D2, D3, D4, D5, D6, D7, D8, D9};
 
